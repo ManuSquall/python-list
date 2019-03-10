@@ -1,17 +1,17 @@
 # Ecrire un programme qui permet de remplir un tableau d' entiers. Le programme affiche les 
-# valeurs  saisies  puis  détermine  et  affiche  le  pourcentage  de  présence  de  chaque  valeur  du 
+# valeurs  saisies  puis  détermine  et  affiche  le  nombre  de  présence  de  chaque  valeur  du 
 # tableau.
 
 T=[]
-rep="oui"
-while rep=="oui":
+rep="o"
+while rep=="o":
 
     print("Saisissez l'entier ", len(T)+1," de T")
     T.append(input())
     rep=""
 
-    while rep!="oui" and rep!="non":
-        print("Voulez vous saisir un entier? [oui / non]")
+    while rep!="o" and rep!="n":
+        print("Voulez vous saisir un entier? [o / n]")
         rep=input()
 
 print()
@@ -19,22 +19,30 @@ print("Affichage")
 print(T)
 
 #   pourcentage de présence de chaque valeur
-# trouve=False
-# cpt=0
+#with doublon
+# for i in range(len(T)):
+#         cpt=T.count(T[i])
+#         print()
+#         print()
+#         print("===============")
+#         print()
+#         print(T[i]," est présent ", cpt ," fois" )
+
+#without doublon
 for i in range(len(T)):
     trouve=0
-    for j in range(len(T)):
-        if T[i]==T[j]:
+    j=i+1
+    #print("j=",j)
+    while(j<len(T)):
+        if T[j]==T[i]:
             trouve=1
-    cpt=0
-    if (trouve==0):
-        for x in range(len(T)):
-            if T[i]==T[x]:
-                cpt=cpt+1
-    print()
-    print()
-    print("===============")
-    print()
-    print(T[i]," est présent ",cpt," fois" )
+        j+=1
+    if(trouve==0):
+        cpt=T.count(T[i])
+        print()
+        print()
+        print("===============")
+        print()
+        print(T[i]," est présent ", cpt ," fois" )
 
 
