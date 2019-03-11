@@ -30,14 +30,14 @@ print(T)
 
 #without doublon
 for i in range(len(T)):
-    trouve=0
+    trouve=False
     j=i+1
     #print("j=",j)
     while(j<len(T)):
         if T[j]==T[i]:
-            trouve=1
+            trouve=True
         j+=1
-    if(trouve==0):
+    if(trouve==False):
         cpt=T.count(T[i])
         print()
         print()
